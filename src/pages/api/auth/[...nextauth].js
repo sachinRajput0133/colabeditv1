@@ -78,6 +78,7 @@ export const authOptions = {
   },
   basePath: "/api/auth",
   secret: CONFIG.NEXTAUTH_SECRET,
+  site: CONFIG.FETCH_URL,
   allowDangerousEmailAccountLinking: true, // Enable account linking
 };
 
