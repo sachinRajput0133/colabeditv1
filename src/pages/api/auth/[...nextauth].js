@@ -11,14 +11,14 @@ import { CONFIG } from "../../../../config";
 
 export const authOptions = {
   providers: [
-    // GoogleProvider({
-    //   clientId: CONFIG.GOOGLE_ID,
-    //   clientSecret: CONFIG.GOOGLE_SECRET,
-    // }),
-    // GitHubProvider({
-    //   clientId: CONFIG.GITHUB_ID,
-    //   clientSecret: CONFIG.GITHUB_SECRET,
-    // }),
+    GoogleProvider({
+      clientId: CONFIG.GOOGLE_ID,
+      clientSecret: CONFIG.GOOGLE_SECRET,
+    }),
+    GitHubProvider({
+      clientId: CONFIG.GITHUB_ID,
+      clientSecret: CONFIG.GITHUB_SECRET,
+    }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -29,34 +29,34 @@ export const authOptions = {
         console.log("🚀 ~ authorize ~ credentials:", credentials)
 
         console.log("this is credentiallllll")
-        // await dbConnect();
-        // const user = await User.findOne({ email: credentials.email }).select(
-        //   "+password"
-        // );
-        // if (!user) {
-        //   throw new Error("No user found with this email");
-        // }
-        // const isValid = await bcrypt.compare(
-        //   credentials.password,
-        //   user.password
-        // );
-        // if (!isValid) {
-        //   throw new Error("Invalid password");
-        // }
-        // return {
-        //   id: user._id.toString(),
-        //   name: user.name,
-        //   email: user.email,
-        //   role: user.role,
-        //   image: user.image,
-        // };
-          return {
-          id: "67cc10edc39445aa024d2c3a",
-          name: "sa",
-          email: "admin@yopmail.com ",
-          role: "owner",
-          // image: user.image,
+        await dbConnect();
+        const user = await User.findOne({ email: credentials.email }).select(
+          "+password"
+        );
+        if (!user) {
+          throw new Error("No user found with this email");
+        }
+        const isValid = await bcrypt.compare(
+          credentials.password,
+          user.password
+        );
+        if (!isValid) {
+          throw new Error("Invalid password");
+        }
+        return {
+          id: user._id.toString(),
+          name: user.name,
+          email: user.email,
+          role: user.role,
+          image: user.image,
         };
+        //   return {
+        //   id: "67cc10edc39445aa024d2c3a",
+        //   name: "sa",
+        //   email: "admin@yopmail.com ",
+        //   role: "owner",
+        //   // image: user.image,
+        // };
       },
     }),
   ],
