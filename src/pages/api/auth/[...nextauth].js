@@ -57,7 +57,7 @@ export const authOptions = {
       },
     }),
   ],
-  adapter: MongoDBAdapter(clientPromise),
+  // adapter: MongoDBAdapter(clientPromise),
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
@@ -85,8 +85,10 @@ export const authOptions = {
   },
   // basePath: "/api/auth",
   secret: CONFIG.NEXTAUTH_SECRET,
+  url: CONFIG.FETCH_URL,
   // site: CONFIG.FETCH_URL,
   // allowDangerousEmailAccountLinking: true, // Enable account linking
+  debug:true
 };
 
 export default NextAuth(authOptions);
