@@ -11,14 +11,14 @@ import { CONFIG } from "../../../../config";
 
 export const authOptions = {
   providers: [
-    GoogleProvider({
-      clientId: CONFIG.GOOGLE_ID,
-      clientSecret: CONFIG.GOOGLE_SECRET,
-    }),
-    GitHubProvider({
-      clientId: CONFIG.GITHUB_ID,
-      clientSecret: CONFIG.GITHUB_SECRET,
-    }),
+    // GoogleProvider({
+    //   clientId: CONFIG.GOOGLE_ID,
+    //   clientSecret: CONFIG.GOOGLE_SECRET,
+    // }),
+    // GitHubProvider({
+    //   clientId: CONFIG.GITHUB_ID,
+    //   clientSecret: CONFIG.GITHUB_SECRET,
+    // }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
