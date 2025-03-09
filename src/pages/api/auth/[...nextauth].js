@@ -26,26 +26,33 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        await dbConnect();
-        const user = await User.findOne({ email: credentials.email }).select(
-          "+password"
-        );
-        if (!user) {
-          throw new Error("No user found with this email");
-        }
-        const isValid = await bcrypt.compare(
-          credentials.password,
-          user.password
-        );
-        if (!isValid) {
-          throw new Error("Invalid password");
-        }
+        console.log("🚀 ~ authorize ~ credentials:", credentials)
+        // await dbConnect();
+        // const user = await User.findOne({ email: credentials.email }).select(
+        //   "+password"
+        // );
+        // if (!user) {
+        //   throw new Error("No user found with this email");
+        // }
+        // const isValid = await bcrypt.compare(
+        //   credentials.password,
+        //   user.password
+        // );
+        // if (!isValid) {
+        //   throw new Error("Invalid password");
+        // }
+        // return {
+        //   id: user._id.toString(),
+        //   name: "sachin" || user.name,
+        //   email: "admin@yopmail.com"  || user.email,
+        //   role: "owner" ||  user.role,
+        //   image: user.image,
+        // };
         return {
-          id: user._id.toString(),
-          name: user.name,
-          email: user.email,
-          role: user.role,
-          image: user.image,
+          id:"67cc10edc39445aa024d2c3a",
+          name: "sachin" ,
+          email: "admin@yopmail.com" ,
+          role: "owner" ,
         };
       },
     }),
