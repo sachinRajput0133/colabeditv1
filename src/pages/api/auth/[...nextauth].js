@@ -26,6 +26,9 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        console.log("🚀 ~ authorize ~ credentials:", credentials)
+
+        console.log("this is credentiallllll")
         // await dbConnect();
         // const user = await User.findOne({ email: credentials.email }).select(
         //   "+password"
@@ -64,6 +67,7 @@ export const authOptions = {
   },
   callbacks: {
     async jwt({ token, user }) {
+      console.log("this is callbacl jwttt")
       if (user) {
         token.id = user.id;
         token.role = user.role;
@@ -71,7 +75,7 @@ export const authOptions = {
       return token;
     },
     async session({ session, token }) {
-      console.log("🚀 ~ session ~ session:", session);
+      console.log("🚀 ~ this is call back  ~ session:", session);
       if (session.user) {
         session.user.id = token.id;
         session.user.role = token.role;
