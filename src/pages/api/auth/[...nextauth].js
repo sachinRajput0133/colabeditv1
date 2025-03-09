@@ -76,6 +76,7 @@ export const authOptions = {
     signIn: "/login",
     error: "/login",
   },
+  basePath: "/api/auth",
   secret: CONFIG.NEXTAUTH_SECRET,
   allowDangerousEmailAccountLinking: true, // Enable account linking
 };
