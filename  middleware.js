@@ -23,3 +23,7 @@ export function middleware(request) {
 
   return response
 }
+
+export const config = {
+    matcher: ['/api/auth/:path*', '/api/:path*']
+  }

@@ -65,7 +65,7 @@ const CreateDocumentModal = ({ onClose, onCreate }) => {
             <button
               type="submit"
               disabled={loading || !title.trim()}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+              className="px-4 py-2 bg-blue-600 border rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
             >
               {loading ? 'Creating...' : 'Create Document'}
             </button>
