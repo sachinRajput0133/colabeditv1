@@ -3,8 +3,9 @@ import { getSession } from 'next-auth/react';
 import DocumentList from '@components/documents/DocumentList';
 import axios from 'axios';
 import { CONFIG } from '../../config';
+import getConfig from 'next/config';
 // import FolderTree from '../components/documents/FolderTree';
-
+const { publicRuntimeConfig } = getConfig();
 
 
 const Dashboard = ({ initialDocuments, initialFolders }) => {
