@@ -1,0 +1,113 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Editor styles */
+.ql-editor {
+  min-height: 300px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="small"]::before {
+  font-size: 0.75em;
+  content: 'Small';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="normal"]::before {
+  font-size: 1em;
+  content: 'Normal';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="large"]::before {
+  font-size: 1.5em;
+  content: 'Large';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="huge"]::before {
+  font-size: 2em;
+  content: 'Huge';
+}
+
+/* Cursor colors for different users */
+.ql-cursor-caret-container {
+  position: absolute;
+  margin-left: -1px;
+  pointer-events: none;
+}
+
+.ql-cursor-caret {
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.ql-cursor-flag {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 2px;
+  color: white;
+  font-size: 11px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.ql-cursor-flag::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  bottom: -3px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: inherit;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}

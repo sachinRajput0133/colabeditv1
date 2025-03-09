@@ -1,0 +1,37 @@
+/* eslint-disable prettier/prettier */
+const routes = {
+  home: "/",
+  login: "/login",
+  register: "/register",
+  otp: "/otp",
+  instruction: "/instruction",
+  guideline: "/guideline",
+  test: "/test",
+  result: "/result",
+  login2: "/login2",
+  survey: "/survey",
+  delegateAccess: "/delegate-access",
+  termsOfUse: "/terms-of-use",
+  privacyPolicy: "/privacy-policy",
+  fiveZeroThree: "/503",
+  profile: "/profile-setting",
+  notification: "/notification",
+  purchaseHistory: "/purchase-history",
+  myAddress: "/my-address",
+  cart: "/cart",
+  assessment: "/assessment",
+  checkout: "/checkout",
+  myAssessment: "/my-assessment",
+  aboutUs: "/about-us",
+  contactUs: "/contact-us",
+  surveyDetails: "/survey-details",
+  changePassword: "/change-password",
+  strength: "/strength",
+  irrAssessment: "/irr-assessment",
+  surveyList:"/survey-list" ,
+  assessmentList:"/assessment-list",
+  category:(cat)=>`/${cat}`,
+  folderDetail:(id)=>`/folder/${id}`
+}
+
+export default routes

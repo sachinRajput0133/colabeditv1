@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@shared/*": ["./shared/*"],
+      "@icons/*": ["./icons/*"],
+      "@components/*": ["./components/*"],
+      "@widget/*": ["./widget/*"],
+      "@utils/*": ["./utils/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@lib/*": ["./lib/*"],
+      "@models/*": ["./models/*"]
+    }
+  }
+}
