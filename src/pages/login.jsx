@@ -36,6 +36,7 @@ const Login = () => {
       if (result.error) {
         setError(result.error);
       } else {
+        console.log("🚀 ~ handleSubmit ~ router.query:", router.query)
         router.push(router.query.callbackUrl || '/dashboard');
       }
     } catch (error) {

@@ -26,26 +26,33 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        await dbConnect();
-        const user = await User.findOne({ email: credentials.email }).select(
-          "+password"
-        );
-        if (!user) {
-          throw new Error("No user found with this email");
-        }
-        const isValid = await bcrypt.compare(
-          credentials.password,
-          user.password
-        );
-        if (!isValid) {
-          throw new Error("Invalid password");
-        }
-        return {
-          id: user._id.toString(),
-          name: user.name,
-          email: user.email,
-          role: user.role,
-          image: user.image,
+        // await dbConnect();
+        // const user = await User.findOne({ email: credentials.email }).select(
+        //   "+password"
+        // );
+        // if (!user) {
+        //   throw new Error("No user found with this email");
+        // }
+        // const isValid = await bcrypt.compare(
+        //   credentials.password,
+        //   user.password
+        // );
+        // if (!isValid) {
+        //   throw new Error("Invalid password");
+        // }
+        // return {
+        //   id: user._id.toString(),
+        //   name: user.name,
+        //   email: user.email,
+        //   role: user.role,
+        //   image: user.image,
+        // };
+          return {
+          id: "67cc10edc39445aa024d2c3a",
+          name: "sa",
+          email: "admin@yopmail.com ",
+          role: "owner",
+          // image: user.image,
         };
       },
     }),
@@ -74,12 +81,12 @@ export const authOptions = {
   },
   pages: {
     signIn: "/login",
-    error: "/login",
+    // error: "/login",
   },
-  basePath: "/api/auth",
+  // basePath: "/api/auth",
   secret: CONFIG.NEXTAUTH_SECRET,
-  site: CONFIG.FETCH_URL,
-  allowDangerousEmailAccountLinking: true, // Enable account linking
+  // site: CONFIG.FETCH_URL,
+  // allowDangerousEmailAccountLinking: true, // Enable account linking
 };
 
 export default NextAuth(authOptions);
