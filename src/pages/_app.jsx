@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 
   return (
     <AppContext.Provider value={value}>
-      <SessionProvider session={session}>
+      <SessionProvider session={session} baseUrl="https://sample.doccollab.tech">
         <Suspense
           fallback={
             <div className="flex h-screen items-center justify-center">
